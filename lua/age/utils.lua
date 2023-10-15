@@ -11,6 +11,9 @@ function M.get(secret_path, identity_filepath, print_secret)
             print(result)
         end
         handle:close()
+        if string.sub(result, -1) == '\n' then
+            result = string.sub(result, 1, -2)
+        end
         return result
     end
 end

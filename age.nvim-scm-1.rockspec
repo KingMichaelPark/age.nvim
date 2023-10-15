@@ -25,11 +25,10 @@ source = {
 build = {
     type = 'builtin',
     copy_directories = {
-        'data',
-        'plugin'
+        'plugin', 'lua'
     }
 }
 test = {
     type = "command",
-    command = "make test"
+    command = "lua tests/test_age.lua"
 }

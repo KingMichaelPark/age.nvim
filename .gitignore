@@ -1,2 +1,4 @@
 /.luarocks
 .DS_STORE
+/luarocks
+/lua_modules
