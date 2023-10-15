@@ -1,4 +1,4 @@
-# Age.nvim
+# age.nvim
 
 A simply utility for loading encrypted secrets from an
 [age](https://github.com/FiloSottile/age) encrypted file.
