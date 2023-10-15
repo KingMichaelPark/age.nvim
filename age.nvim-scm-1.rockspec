@@ -10,7 +10,7 @@ description = {
       age: For managing and loading secrets like API keys for plugins that need external configs.
    ]],
     homepage = 'http://github.com/KingMichaelPark/age.nvim',
-    license = 'MIT/X11',
+    license = 'BSD 3',
 }
 
 dependencies = {
