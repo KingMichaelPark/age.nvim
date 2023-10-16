@@ -52,21 +52,24 @@ echo 'MY_SUPER_COOL_API_KEY' | age -e -r "$age_public_key" -o ~/.dotfiles/api_ke
 
 #### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
+This example is using the excellent [ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim).
+
 ```lua
+local identity = vim.fn.expand('$HOME/.age/identity.txt')
+local secret = vim.fn.expand('$HOME/.dotfiles/chatgpt.age')
+
 require("lazy").setup({
-  {
-    'USERNAME/REPO',
-    dependencies = {"KingMichaelPark/age.nvim"},
-    config = function ()
-        local age = require('age')
-        local identity_filepath = vim.fn.expand('$HOME/.age/identity.txt')
-        local secret_path = vim.fn.expand('$HOME/.dotfiles/api_key.age')
-        local api_key = age.get(secret_path, identity_filepath)
-        -- If it is multiple lines and you want a specific line you can
-        -- return a newline separated table.
-        local api_keys = age.list(secret_path, identity_filepath)
-    end
-  },
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+        ...
+        "KingMichaelPark/age.nvim" -- Add age dependency
+    }
+    config = function()
+        vim.env.OPENAI_API_KEY = require('age').get(secret, identity) -- Get secret
+        require("chatgpt").setup()
+    end,
+}
 })
 ```
 
