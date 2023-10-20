@@ -1,7 +1,7 @@
 # age.nvim
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.0.2/total)
+![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.0.3/total)
 
 A simply utility for loading encrypted secrets from an
 [age](https://github.com/FiloSottile/age) encrypted file.
