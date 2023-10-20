@@ -36,4 +36,32 @@ function M.list(secret_path, identity_filepath, print_secret)
     end
 end
 
+function M.from_json(secret_path, identity_filepath, print_secret)
+    print_secret = print_secret or false
+    local handle = io.popen("age --decrypt --identity " .. identity_filepath .. " " .. secret_path)
+    if handle ~= nil then
+        local result = handle:read("*a")
+        handle:close()
+        local results = vim.json.decode(result)
+        if print_secret then
+            print(vim.inspect(results))
+        end
+        return results
+    end
+end
+
+function M.from_sops(secret_path, print_secret)
+    print_secret = print_secret or false
+    local handle = io.popen("sops --decrypt " .. secret_path)
+    if handle ~= nil then
+        local result = handle:read("*a")
+        handle:close()
+        local results = vim.json.decode(result)
+        if print_secret then
+            print(vim.inspect(results))
+        end
+        return results
+    end
+end
+
 return M

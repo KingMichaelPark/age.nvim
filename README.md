@@ -1,5 +1,8 @@
 # age.nvim
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.0.2/total)
+
 A simply utility for loading encrypted secrets from an
 [age](https://github.com/FiloSottile/age) encrypted file.
 
@@ -73,3 +76,50 @@ require("lazy").setup({
 })
 ```
 
+## Usage
+
+At the moment there are 4 options for decryption, I have added
+SOPs decrypt as an option for `json` only as there is a built-in
+json decoder in neovim.
+
+```lua
+local age = require('age')
+
+age.get(
+    "super-secret.txt.age", -- The file to decrypt
+    "identity.txt" -- Your private age key
+)
+
+age.list(
+    "super-secrets-multiline.txt.age", -- The file to decrypt
+    "identity.txt" -- Your private age key
+)
+
+-- Returns a table
+age.from_json(
+    "super-secrets.json.age", -- The file to decrypt
+    "identity.txt" -- Your private age key
+)
+
+-- Returns a table
+age.from_sops("tests/sops_api_keys.json")
+-- SOPs uses a special path so you don't need to pass your identity
+```
+
+## Running Tests
+
+To run tests:
+
+1. Open neovim
+2. Have plenary.nvim installed
+3. Run `:PlenaryBustedDirectory tests/`
+
+
+
+## Authors
+
+- [@KingMichaelPark](https://www.github.com/KingMichaelPark)
+
+## Contributing
+
+Contributions are always welcome!

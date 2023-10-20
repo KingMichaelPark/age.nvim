@@ -5,3 +5,4 @@ version_type = "semver"
 version = "0.0.2"
 update_changelog_on_bump = true
 major_version_zero = true
+version_files = ["README.md"]

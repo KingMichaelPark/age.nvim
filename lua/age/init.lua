@@ -10,6 +10,8 @@ local M = {}
 -- plugin's other modules.
 M.get = utils.get
 M.list = utils.list
+M.from_json = utils.from_json
+M.from_sops = utils.from_sops
 
 function M.setup(spec, opts)
     if type(spec) == "table" and spec.spec then
