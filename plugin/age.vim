@@ -19,3 +19,5 @@ exe "lua package.path = package.path .. ';" . s:lua_rocks_deps_loc . "/lua-?/ini
 " Exposes the plugin's functions for use as commands in Neovim.
 command! -nargs=* -complete=file AgeGet lua require("age").get(<f-args>, true)
 command! -nargs=* -complete=file AgeList lua require("age").list(<f-args>, true)
+command! -nargs=* -complete=file AgeJson lua require("age").from_json(<f-args>, true)
+command! -nargs=* -complete=file AgeSops lua require("age").from_sops(<f-args>, true)

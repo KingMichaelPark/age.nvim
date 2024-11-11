@@ -1,7 +1,6 @@
-local _MODREV, _SPECREV = 'scm', '-1'
 rockspec_format = "3.0"
 package = 'age.nvim'
-version = _MODREV .. _SPECREV
+version = '0.1.0-1'
 
 description = {
     summary = 'load secrets from age encrypted text files ',
@@ -14,12 +13,13 @@ description = {
 }
 
 dependencies = {
-    'lua >= 5.1, < 5.4',
+    'lua >= 5.1, <= 5.4',
     'luassert'
 }
 
 source = {
     url = 'git://github.com/KingMichaelPark/age.nvim',
+    tag = '0.1.0'
 }
 
 build = {
