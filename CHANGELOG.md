@@ -1,3 +1,9 @@
+## 0.1.0 (2024-11-11)
+
+### Feat
+
+- **documentation**: add docstrings and update README
+
 ## 0.0.3 (2023-10-20)
 
 ### Fix
