@@ -11,7 +11,7 @@ M.from_sops = utils.from_sops
 
 --- Initializes the age plugin with the given configuration
 --- @param spec table|string The specification for age configuration. Can be either a table with a spec field or a direct spec value
---- @param opts table|nil Optional configuration table. If spec is a table with spec field, this parameter is ignored
+--- @param opts? table Optional configuration table. If spec is a table with spec field, this parameter is ignored
 --- @return nil|string Returns nil on success, or returns an error notification if age is not installed
 function M.setup(spec, opts)
     if type(spec) == "table" and spec.spec then
