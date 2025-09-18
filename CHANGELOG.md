@@ -1,3 +1,13 @@
+## 0.1.1 (2025-09-18)
+
+### Feat
+
+- add checkhealth to age.nvim functionality
+
+### Fix
+
+- add optional types to setup and utils functions
+
 ## 0.1.0 (2024-11-11)
 
 ### Feat
