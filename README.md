@@ -106,6 +106,10 @@ age.from_json(
 -- Returns a table
 age.from_sops("tests/sops_api_keys.json")
 -- SOPs uses a special path so you don't need to pass your identity
+
+-- Encrypts the current visual selection
+-- Prompts for confirmation and recipients (comma separated public keys)
+age.encrypt()
 ```
 
 ## Running Tests

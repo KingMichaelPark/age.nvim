@@ -1,4 +1,5 @@
 local utils = require("age.utils")
+local encrypt = require("age.encrypt")
 
 local M = {}
 
@@ -8,6 +9,7 @@ M.get = utils.get
 M.list = utils.list
 M.from_json = utils.from_json
 M.from_sops = utils.from_sops
+M.encrypt = encrypt.encrypt
 
 --- Initializes the age plugin with the given configuration
 --- @param spec table|string The specification for age configuration. Can be either a table with a spec field or a direct spec value
