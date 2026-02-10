@@ -1,3 +1,9 @@
+## 0.2.0 (2026-02-10)
+
+### Feat
+
+- add age.encrypt to encrypt a visual selection and replace it.
+
 ## 0.1.1 (2025-09-18)
 
 ### Feat

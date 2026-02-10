@@ -1,7 +1,7 @@
 # age.nvim
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.1.1/total)
+![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.2.0/total)
 ![LuaRocks](https://img.shields.io/luarocks/v/KingMichaelPark/age.nvim)
 
 
