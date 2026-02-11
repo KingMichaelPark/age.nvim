@@ -1,6 +1,6 @@
 rockspec_format = "3.0"
 package = 'age.nvim'
-version = '0.1.0-1'
+version = '0.2.0-1'
 
 description = {
     summary = 'load secrets from age encrypted text files ',
@@ -19,7 +19,7 @@ dependencies = {
 
 source = {
     url = 'git://github.com/KingMichaelPark/age.nvim',
-    tag = '0.1.0'
+    tag = '0.2.0'
 }
 
 build = {
