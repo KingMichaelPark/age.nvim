@@ -4,7 +4,6 @@
 ![GitHub release (latest by SemVer including pre-releases)](https://img.shields.io/github/downloads-pre/KingMichaelPark/age.nvim/0.2.0/total)
 ![LuaRocks](https://img.shields.io/luarocks/v/KingMichaelPark/age.nvim)
 
-
 A simply utility for loading encrypted secrets from an
 [age](https://github.com/FiloSottile/age) encrypted file.
 
@@ -19,7 +18,6 @@ I take no responsibility for leaked passwords or API keys. It is **on you** to
 decide what age is, this approach, and making sure to not commit your identity
 keys. Inspired by [pass](https://www.passwordstore.org/) and
 [passage](https://github.com/FiloSottile/passage/blob/main/INSTALL)
-
 
 ## Requirements
 
@@ -60,6 +58,10 @@ echo 'MY_SUPER_COOL_API_KEY' | age -e -r "$age_public_key" -o ~/.dotfiles/api_ke
 This example is using the excellent
 [ChatGPT.nvim](https://github.com/jackMort/ChatGPT.nvim).
 
+##### As a dependency
+
+In the use case that you just want to load secrets from a pre-encrypted file.
+
 ```lua
 local identity = vim.fn.expand('$HOME/.age/identity.txt')
 local secret = vim.fn.expand('$HOME/.dotfiles/chatgpt.age')
@@ -77,6 +79,43 @@ require("lazy").setup({
     end,
 }
 })
+```
+
+In the use case that you want to install it as a plugin to assign key maps
+
+```lua
+return {
+    "KingMichaelPark/age.nvim",
+    keys = {
+        {
+            "<leader>E",
+            function() require('age').encrypt() end,
+            mode = { "v" },
+            desc = "age [E]ncrypt the selected text",
+        }
+    }
+}
+```
+
+#### Installation via vim.pack.add
+
+For users who prefer using Neovim's built-in package management features
+(available in Neovim 0.12+).
+
+```lua
+vim.pack.add({
+    src = "https://github.com/KingMichaelPark/age.nvim"
+})
+
+vim.keymap.set("v", "<leader>E", function()
+    require('age').encrypt()
+end, { desc = "age [E]ncrypt the selected text" })
+
+local identity = vim.fn.expand('$HOME/.age/identity.txt')
+local secret = vim.fn.expand('$HOME/.dotfiles/chatgpt.age')
+
+-- Ensure the plugin is loaded before calling the 'get' function
+vim.env.OPENAI_API_KEY = require('age').get(secret, identity)
 ```
 
 ## Usage
@@ -119,8 +158,6 @@ To run tests:
 1. Open neovim
 2. Have plenary.nvim installed
 3. Run `:PlenaryBustedDirectory tests/`
-
-
 
 ## Authors
 
